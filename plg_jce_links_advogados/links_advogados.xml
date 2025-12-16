@@ -6,7 +6,7 @@
 	<copyright>Ponto Mega - 2025</copyright>
 	<license>GNU/GPL</license>
 	<version>1.0.4</version>
-	<description>PLGJCELINKS_ADVOGADOS_DESC</description>
+	<description>PLG_JCE_LINKS_ADVOGADOS_DESC</description>
 
 	<files>
 		<filename plugin="links_advogados">links_advogados.php</filename>

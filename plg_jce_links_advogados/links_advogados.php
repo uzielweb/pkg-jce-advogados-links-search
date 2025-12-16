@@ -46,7 +46,7 @@ class WFLinkBrowser_advogados extends CMSObject
 
     public function getList()
     {
-        $html = '<li id="index.php?option=com_advogados&view=advogado"><div class="uk-tree-row"><a href="#"><span class="uk-tree-icon folder content nolink"></span><span class="uk-tree-text">' . Text::_('PLGJCELINKS_ADVOGADOS_ADVOGADOS') . '</span></a></div></li>';
+        $html = '<li id="index.php?option=com_advogados&view=advogado"><div class="uk-tree-row"><a href="#"><span class="uk-tree-icon folder content nolink"></span><span class="uk-tree-text">' . Text::_('PLG_JCE_LINKS_ADVOGADOS_ADVOGADOS') . '</span></a></div></li>';
 
         return $html;
     }
