@@ -9,7 +9,7 @@
 	<description>PLGJCELINKS_ADVOGADOS_DESC</description>
 
 	<files>
-		<filename plugin="plg_jce_links_advogados">links_advogados.php</filename>
+		<filename plugin="links_advogados">links_advogados.php</filename>
 	</files>
 
 	<languages>
