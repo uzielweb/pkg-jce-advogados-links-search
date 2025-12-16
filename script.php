@@ -13,10 +13,16 @@ use Joomla\CMS\Installer\InstallerAdapter;
 use Joomla\CMS\Installer\InstallerScriptInterface;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Log\Log;
+use Joomla\CMS\Factory;
 
 return new class () implements InstallerScriptInterface {
     private string $minimumJoomla = '4.0';
     private string $minimumPhp = '7.4';
+    
+    private array $plugins = [
+        ['type' => 'plugin', 'group' => 'jce', 'element' => 'links_advogados'],
+        ['type' => 'plugin', 'group' => 'search', 'element' => 'advogados']
+    ];
 
     public function install(InstallerAdapter $adapter): bool
     {
@@ -61,6 +67,35 @@ return new class () implements InstallerScriptInterface {
 
     public function postflight(string $type, InstallerAdapter $adapter): bool
     {
+        // Ativar plugins automaticamente na instalação ou atualização
+        if ($type === 'install' || $type === 'update') {
+            $this->enablePlugins();
+        }
+        
         return true;
+    }
+    
+    /**
+     * Ativa os plugins do pacote
+     */
+    private function enablePlugins(): void
+    {
+        $db = Factory::getContainer()->get('DatabaseDriver');
+        
+        foreach ($this->plugins as $plugin) {
+            $query = $db->getQuery(true)
+                ->update($db->quoteName('#__extensions'))
+                ->set($db->quoteName('enabled') . ' = 1')
+                ->where($db->quoteName('type') . ' = ' . $db->quote($plugin['type']))
+                ->where($db->quoteName('folder') . ' = ' . $db->quote($plugin['group']))
+                ->where($db->quoteName('element') . ' = ' . $db->quote($plugin['element']));
+            
+            try {
+                $db->setQuery($query);
+                $db->execute();
+            } catch (\Exception $e) {
+                Log::add('Erro ao ativar plugin ' . $plugin['group'] . '/' . $plugin['element'] . ': ' . $e->getMessage(), Log::WARNING, 'jerror');
+            }
+        }
     }
 };
