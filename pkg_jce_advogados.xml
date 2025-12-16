@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" method="upgrade">
+	<name>PKG_JCE_ADVOGADOS</name>
+	<packagename>jce_advogados</packagename>
+	<author>Ponto Mega</author>
+	<creationDate>2025-12-16</creationDate>
+	<copyright>Copyright (C) 2025 Ponto Mega. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>1.0.0</version>
+	<description>PKG_JCE_ADVOGADOS_DESC</description>
+	<url>https://github.com/uzielweb/pkg-jce-advogados-links-search</url>
+
+	<scriptfile>script.php</scriptfile>
+
+	<files folder=".">
+		<folder type="plugin" id="plg_jce_links_advogados" group="jce">plg_jce_links_advogados</folder>
+		<folder type="plugin" id="plg_search_advogados" group="search">plg_search_advogados</folder>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/pkg_jce_advogados.ini</language>
+		<language tag="en-GB">en-GB/pkg_jce_advogados.sys.ini</language>
+		<language tag="pt-BR">pt-BR/pkg_jce_advogados.ini</language>
+		<language tag="pt-BR">pt-BR/pkg_jce_advogados.sys.ini</language>
+	</languages>
+
+	<updateservers>
+		<server type="extension" priority="1" name="Ponto Mega Updates">https://raw.githubusercontent.com/uzielweb/pkg-jce-advogados-links-search/refs/heads/main/update.xml</server>
+	</updateservers>
+</extension>

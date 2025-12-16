@@ -1,0 +1,51 @@
+# Joomla specific files
+configuration.php
+.htaccess
+robots.txt
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.phpintel/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+*.swp
+*.swo
+
+# Build files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+build/
+dist/
+
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Composer
+/vendor/
+composer.phar
+composer.lock
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+*.bak
+*.tmp
+*.temp

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" group="jce" method="upgrade">
+	<name>plg_jce_links_advogados</name>
+	<author>Ponto Mega</author>
+	<creationDate>2025-11-13</creationDate>
+	<copyright>Ponto Mega - 2025</copyright>
+	<license>GNU/GPL</license>
+	<version>1.0.4</version>
+	<description>PLGJCELINKS_ADVOGADOS_DESC</description>
+
+	<files>
+		<filename plugin="plg_jce_links_advogados">links_advogados.php</filename>
+	</files>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/plg_jce_links_advogados.ini</language>
+		<language tag="en-GB">language/en-GB/plg_jce_links_advogados.sys.ini</language>
+		<language tag="pt-BR">language/pt-BR/plg_jce_links_advogados.ini</language>
+		<language tag="pt-BR">language/pt-BR/plg_jce_links_advogados.sys.ini</language>
+	</languages>
+
+	<updateservers>
+		<server type="extension" priority="1" name="Ponto Mega Updates">https://raw.githubusercontent.com/uzielweb/linksadvogados/refs/heads/master/update.xml</server>
+	</updateservers>
+</extension>
